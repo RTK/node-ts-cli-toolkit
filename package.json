@@ -2,10 +2,7 @@
     "name": "@ams/cli-toolkit",
     "version": "0.0.1",
     "description": "CLI toolkit using typescript for custom tools",
-    "main": "dist/",
-    "scripts": {
-        "postinstall": "tsc"
-    },
+    "main": "src/",
     "keywords": [
         "tooling",
         "cli",
