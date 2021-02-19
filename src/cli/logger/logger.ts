@@ -17,7 +17,9 @@ type CLILogLevel = 'silent' | 'error' | 'warn' | 'notice' | 'info' | 'verbose';
  *  - verbose
  */
 export function setupCLILogLevel(): void {
-    const logLevel: CLILogLevel | null = getCLIArgument<CLILogLevel>('logLevel');
+    const logLevel: CLILogLevel | null = getCLIArgument<CLILogLevel>(
+        'logLevel'
+    );
 
     switch (logLevel) {
         case 'silent':
