@@ -4,7 +4,7 @@
         "baseUrl": ".",
         "charset": "utf-8",
         "declaration": true,
-        "module": "ES2020",
+        "module": "CommonJS",
         "moduleResolution": "Node",
         "outDir": "dist",
         "rootDir": "src",
