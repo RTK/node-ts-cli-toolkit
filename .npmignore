@@ -1,5 +1,16 @@
+# IntelliJ
+.idea
+*.iml
+
+# Editor
 .editorconfig
+
+# Tools
 .huskyrc.json
 .prettierrc
+
+# TypeScript
 tsconfig.json
+
+# Sources
 src/

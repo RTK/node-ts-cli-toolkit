@@ -13,11 +13,10 @@
         "node": ">=15.9.0",
         "npm": ">=7.5.3"
     },
-    "exports": {
-        "./": "./dist/"
-    },
+    "main": "dist/cli-toolkit.js",
+    "types": "dist/cli-toolkit.d.ts",
     "scripts": {
-        "prepack": "tsc"
+        "prepack": "tsc --build --clean && tsc"
     },
     "devDependencies": {
         "@ams/cli-tool-prettier-config": "git+ssh://git@scm.adesso-mobile.de:7999/wt/cli-tool-prettier-config.git#rev/1.0.0",

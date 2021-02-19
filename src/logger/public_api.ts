@@ -1,4 +1,4 @@
-export {log, setLevel, setOptions} from './logger';
+export {setLoggerLevel, setLoggerOptions, writeLoggerOutput} from './logger';
 
 export {LogLevelColor} from './enums/log-level-color.enum';
 export {LogLevel} from './enums/log-level.enum';

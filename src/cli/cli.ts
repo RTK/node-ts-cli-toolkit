@@ -1,5 +1,9 @@
-import {setupLogLevel} from './logger/logger';
+import {setupCLILogLevel} from './logger/logger';
 
-export function setupDefault(): void {
-    setupLogLevel();
+/**
+ * Sets up the CLI defaults.
+ *  - configures log level
+ */
+export function setupCLIDefaults(): void {
+    setupCLILogLevel();
 }

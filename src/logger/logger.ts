@@ -41,15 +41,35 @@ let logOptions: LogOptions = {
 
 let logLevel: LogLevel = LogLevel.Verbose;
 
-export function setLevel(level: LogLevel): void {
+/**
+ * Changes the current log level.
+ *
+ * Log levels are hierarchical so that e.g. the info level will not show any
+ * verbose output but will output errors, warnings and notices.
+ *
+ * @param level
+ */
+export function setLoggerLevel(level: LogLevel): void {
     logLevel = level;
 }
 
-export function setOptions(options: LogOptions): void {
+/**
+ * Changes the log output format.
+ *
+ * @param options
+ */
+export function setLoggerOptions(options: LogOptions): void {
     logOptions = Object.assign(logOptions, options);
 }
 
-export function log(level: IOLogLevel, message: string): void {
+/**
+ * Logs any string with the provided level either to the stdout or stderr,
+ * depending on the configuration.
+ *
+ * @param level
+ * @param message
+ */
+export function writeLoggerOutput(level: IOLogLevel, message: string): void {
     if (level <= logLevel) {
         let prelude = logLevelTextMapping[level];
 
@@ -62,9 +82,13 @@ export function log(level: IOLogLevel, message: string): void {
         if (
             logOptions.enableHighlighting &&
             logOptions.format?.colorPrelude &&
+            logOptions.colorMapping &&
             level in logOptions.colorMapping
         ) {
-            prelude = applyChalkColor(logOptions.colorMapping[level], prelude);
+            prelude = applyChalkColor(
+                logOptions.colorMapping[level] as LogLevelColor,
+                prelude
+            );
         }
 
         if (
@@ -79,10 +103,11 @@ export function log(level: IOLogLevel, message: string): void {
         if (
             logOptions.enableHighlighting &&
             logOptions.format?.colorMessage &&
+            logOptions.colorMapping &&
             level in logOptions.colorMapping
         ) {
             formattedMessage = applyChalkColor(
-                logOptions.colorMapping[level],
+                logOptions.colorMapping[level] as LogLevelColor,
                 formattedMessage
             );
         }
@@ -91,7 +116,7 @@ export function log(level: IOLogLevel, message: string): void {
 
         if (logOptions.stdIOMapping?.err?.has(level)) {
             console.error(logMessage);
-        } else if (logOptions.stdIOMapping?.out.has(level)) {
+        } else if (logOptions.stdIOMapping?.out?.has(level)) {
             console.log(logMessage);
         }
     }

@@ -4,9 +4,11 @@
         "baseUrl": ".",
         "charset": "utf-8",
         "declaration": true,
-        "module": "CommonJS",
+        "module": "ES2020",
         "moduleResolution": "Node",
         "outDir": "dist",
-        "target": "ES2020"
+        "rootDir": "src",
+        "strict": true,
+        "target": "ES2017"
     }
 }

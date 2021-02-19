@@ -1,35 +1,47 @@
-import {getArgument} from '../arguments/arguments';
+import {getCLIArgument} from '../arguments/arguments';
 
-import {LogLevel, setLevel} from '../../logger';
+import {LogLevel, setLoggerLevel} from '../../logger/public_api';
 
 type CLILogLevel = 'silent' | 'error' | 'warn' | 'notice' | 'info' | 'verbose';
 
-export function setupLogLevel(): void {
-    const logLevel: CLILogLevel | null = getArgument<CLILogLevel>('logLevel');
+/**
+ * Sets up the log level depending on the logLevel argument passed to the
+ * executable
+ *
+ * Possible options are:
+ *  - silent
+ *  - error
+ *  - warn
+ *  - notice
+ *  - info
+ *  - verbose
+ */
+export function setupCLILogLevel(): void {
+    const logLevel: CLILogLevel | null = getCLIArgument<CLILogLevel>('logLevel');
 
     switch (logLevel) {
         case 'silent':
-            setLevel(LogLevel.Silent);
+            setLoggerLevel(LogLevel.Silent);
             break;
 
         case 'error':
-            setLevel(LogLevel.Error);
+            setLoggerLevel(LogLevel.Error);
             break;
 
         case 'warn':
-            setLevel(LogLevel.Warn);
+            setLoggerLevel(LogLevel.Warn);
             break;
 
         case 'notice':
-            setLevel(LogLevel.Notice);
+            setLoggerLevel(LogLevel.Notice);
             break;
 
         case 'info':
-            setLevel(LogLevel.Info);
+            setLoggerLevel(LogLevel.Info);
             break;
 
         case 'verbose':
-            setLevel(LogLevel.Verbose);
+            setLoggerLevel(LogLevel.Verbose);
             break;
     }
 }
