@@ -13,7 +13,7 @@
         "node": ">=15.9.0"
     },
     "exports": {
-        ".": "./dist"
+        "./": "./dist/"
     },
     "scripts": {
         "prepack": "tsc"
