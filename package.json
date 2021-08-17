@@ -8,7 +8,8 @@
         "cli",
         "typescript"
     ],
-    "license": "UNLICENSED",
+    "license": "MIT",
+    "private": false,
     "engines": {
         "node": ">=15.9.0",
         "npm": ">=7.5.3"
