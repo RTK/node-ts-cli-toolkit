@@ -1,8 +1,8 @@
 {
     "name": "@ams/cli-toolkit",
     "version": "1.0.0",
-    "description": "CLI toolkit using typescript for custom tools",
-    "author": "Rouven T. Kruse <kruse@adesso-mobile.de>",
+    "description": "Toolkit for node.js CLI applications built with Typescript",
+    "author": "Rouven T. Kruse <mail@rouvenkruse.de>",
     "keywords": [
         "tooling",
         "cli",
@@ -19,7 +19,7 @@
         "prepack": "tsc --build --clean && tsc"
     },
     "devDependencies": {
-        "@ams/cli-tool-prettier-config": "git+ssh://git@scm.adesso-mobile.de:7999/wt/cli-tool-prettier-config.git#rev/1.0.0",
+        "@rtk/prettier-config": "RTK/prettier-config#v1.0.0",
         "@types/yargs": "^16.0.0",
         "husky": "^4.3.8",
         "prettier": "^2.2.1",
