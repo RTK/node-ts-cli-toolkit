@@ -1,5 +1,5 @@
 {
-    "name": "@rtk/cli-toolkit",
+    "name": "@rtk/node-ts-cli-toolkit",
     "version": "1.0.0",
     "description": "Toolkit for node.js CLI applications built with Typescript",
     "author": "Rouven T. Kruse <mail@rouvenkruse.de>",
